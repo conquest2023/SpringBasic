@@ -25,8 +25,15 @@
     </update>
 
     <select id="selectList" resultType="org.example.demo1.domain.TodoVO">
-        select  *from  tbl_todo2 order by  tno desc  limit #{skip},#{size}
-    </select>
+        select  *from  tbl_todo2
+        <where>
+
+        </where>
+        <foreach collection="types" item="type">
+            #{type}
+        </foreach>
+          order by  tno desc  limit #{skip},#{size}
+         </select>
     <select id="getCount" resultType="int">
         select  count(tno) from tbl_todo2
     </select>

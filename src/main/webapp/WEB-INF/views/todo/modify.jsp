@@ -48,7 +48,8 @@
                     </div>
                     <div class="card-body">
                         <form action="/todo/modify" method="post">
-
+                            <input type="hidden" name="page" value="${pageRequestDTO.page}">
+                            <input type="hidden" name="size" value="${pageRequestDTO.size}">
                             <div class="input-group mb-3">
                                 <span class="input-group-text">TNO</span>
                                 <input type="text" name="tno" class="form-control"
@@ -103,18 +104,29 @@
                                     e.preventDefault()
                                      e.stopPropagation()
 
-                                     formObj.action ="/todo/remove"
+                                     formObj.action ="/todo/remove?${pageRequestDTO.link}"
                                      formObj.method ="post"
 
                                      formObj.submit()
 
                                  },false);
+                            document.querySelector(".btn-primary").addEventListener("click",function(e) {
+
+                                e.preventDefault()
+                                e.stopPropagation()
+
+                                formObj.action ="/todo/modify"
+                                formObj.method ="post"
+
+                                formObj.submit()
+
+                            },false);
                             document.querySelector(".btn-secondary").addEventListener("click",function(e) {
 
                                 e.preventDefault()
                                 e.stopPropagation()
 
-                                self.location= "/todo/list"
+                                self.location= "/todo/list?${pageRequstDTO.link}"
                             },false)
 
                         </script>

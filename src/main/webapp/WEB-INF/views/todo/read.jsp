@@ -86,7 +86,7 @@
 
                             document.querySelector(".btn-secondary").addEventListener("click", function(e){
 
-                            self.location = "/todo/list"
+                            self.location = "/todo/list?${pageRequestDTO.link}"
                             },false)
                             </script>
                     </div>
