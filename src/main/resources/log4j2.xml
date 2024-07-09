@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration status="INFO">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout charset="UTF-8" pattern="%d{hh:mm:ss} %5p [%c] %m%n">
+
+            </PatternLayout>
+
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <logger name="org.springframework" level="DEBUG" additvity="false">
+            <appender-ref ref="console">
+        </appender-ref>
+        </logger>
+
+        <logger name="org.example" level="DEBUG" additvity="false">
+
+        </logger>
+        <root level="DEBUG" additivity="false">
+            <AppenderRef ref="console">
+
+            </AppenderRef>
+        </root>
+    </Loggers>
+
+</configuration>
+
